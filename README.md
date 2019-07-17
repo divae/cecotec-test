@@ -79,3 +79,4 @@ $ docker-compose run app sh -c "python manage.py test && flake8"
 ### APIS
 
 - Crear usuario [http://0.0.0.0:8000/api/user/create/](http://0.0.0.0:8000/api/user/create/)
+- Ver productos (necesitas permisos)[http://0.0.0.0:8000/api/product/products/](http://0.0.0.0:8000/api/product/products/)

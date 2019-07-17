@@ -1,6 +1,7 @@
 
 from django.test import TestCase
 from django.contrib.auth import get_user_model
+from core import models
 
 
 def sample_user(email='test@test.com', password='testpass'):
@@ -38,3 +39,21 @@ class ModelTests(TestCase):
 
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
+
+    def test_product_str(self):
+        product = models.Product.objects.create(
+            user=sample_user(),
+            name='My product',
+            price=5.00
+        )
+
+        self.assertEqual(str(product), product.name)
+
+    def test_order_str(self):
+        order = models.Order.objects.create(
+            name='My order',
+            user=sample_user(),
+            number=1
+        )
+
+        self.assertEqual(str(order), order.name)
