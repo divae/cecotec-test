@@ -70,3 +70,12 @@ Los test se ejecutan junto a un validadore de estilo de código.
 ```bash
 $ docker-compose run app sh -c "python manage.py test && flake8"
 ```
+## UTILES
+
+**_Usuario creado_**
+- email: admin@admin.com
+- contraseña: admin
+
+### APIS
+
+- Crear usuario [http://0.0.0.0:8000/api/user/create/](http://0.0.0.0:8000/api/user/create/)
