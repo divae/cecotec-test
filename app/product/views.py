@@ -8,7 +8,7 @@ from product import serializers
 
 from django.http import HttpResponse
 
-class BaseRecipeAttrViewSet(viewsets.GenericViewSet,
+class BaseOrderAttrViewSet(viewsets.GenericViewSet,
                             mixins.ListModelMixin,
                             mixins.CreateModelMixin):
     authentication_classes = (TokenAuthentication,)
@@ -29,13 +29,35 @@ class BaseRecipeAttrViewSet(viewsets.GenericViewSet,
 
 
 # Create your views here.
-class ProductViewSet(BaseRecipeAttrViewSet):
+class ProductViewSet(BaseOrderAttrViewSet):
 
     queryset = Product.objects.all()
     serializer_class = serializers.ProductSerializer
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+
+class OrderViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.OrderSerializer
+    queryset = Order.objects.all()
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+    def _params_to_integers(self, qs):
+        return [int(str_id) for str_id in qs.split(',')]
+
+    def get_queryset(self):
+        products = self.request.query_params.get('products')
+        queryset = self.queryset
+        if products:
+            product_ids = self._params_to_integers(products)
+            queryset = queryset.filter(producttags__id__in=product_ids)
+
+        return queryset.filter(user=self.request.user)
+
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
 
 
