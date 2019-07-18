@@ -31,19 +31,7 @@ El fichero `requirements.txt` contiene las dependencias del proyecto, para este 
 $ docker-compose build
 ```
 
-
-## Si es la primera vez que se arranca el proyecto
-
-- Generar las migraciones migrations
-```bash
-$ docker-compose run app sh -c "python manage.py migrate"
-```
-- Generar el super usuario de Django
-```bash
-$ docker-compose run app sh -c "python manage.py createsuperuser"
-```
-
-## Levantar Proyecto Django
+## Levantar Proyecto
 
 ```bash
 $ docker-compose up

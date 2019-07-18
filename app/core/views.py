@@ -3,7 +3,7 @@ from django.http import HttpResponse
 def index(request):
 
     salute = """Bienvenid@!
-    <br>Mi nombre es Estela Medrano (@EstelaYoMisma Twitter) y ha sido un placer realizar ésta prueba,<br> 
+    <br>Mi nombre es <a href="https://www.linkedin.com/in/estela-medrano-jim%C3%A9nez-52563776/" >Estela Medrano Jiménez</a> (@EstelaYoMisma Twitter) y ha sido un placer realizar ésta prueba,<br> 
     para probar los usuarios recuerda asociar el token a tu navegador mediante extensiones de Chrome 
     como <strong><a href="https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj">'ModHeader'</a></strong>o similares<br><br>
     Para ésta prueba se ha creado: <br>
