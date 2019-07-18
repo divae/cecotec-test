@@ -2,7 +2,8 @@ from core.models import Product
 from rest_framework import viewsets, mixins
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-
+from django.core.mail import send_mail
+from core.models import Product, Order
 from product import serializers
 
 
@@ -31,3 +32,5 @@ class ProductViewSet(BaseRecipeAttrViewSet):
 
     queryset = Product.objects.all()
     serializer_class = serializers.ProductSerializer
+
+

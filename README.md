@@ -75,8 +75,11 @@ $ docker-compose run app sh -c "python manage.py test && flake8"
 **_Usuario creado_**
 - email: admin@admin.com
 - contraseña: admin
+- token: cf3779e814e08d70dd9f04ad8b5271ec1a679d1d
 
 ### APIS
 
 - Crear usuario [http://0.0.0.0:8000/api/user/create/](http://0.0.0.0:8000/api/user/create/)
-- Ver productos (necesitas permisos)[http://0.0.0.0:8000/api/product/products/](http://0.0.0.0:8000/api/product/products/)
+- Crear un token para el usuario [http://0.0.0.0:8000/api/user/token/](http://0.0.0.0:8000/api/user/token/)
+- Logearse en la aplicación [http://0.0.0.0:8000/api/user/me/](http://0.0.0.0:8000/api/user/me/)
+- Ver productos (necesitas logearte)[http://0.0.0.0:8000/api/product/products/](http://0.0.0.0:8000/api/product/products/)
