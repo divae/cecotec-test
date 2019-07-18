@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 from core.models import Product, Order
 from product import serializers
 
+from django.http import HttpResponse
 
 class BaseRecipeAttrViewSet(viewsets.GenericViewSet,
                             mixins.ListModelMixin,
@@ -32,5 +33,9 @@ class ProductViewSet(BaseRecipeAttrViewSet):
 
     queryset = Product.objects.all()
     serializer_class = serializers.ProductSerializer
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
 
 
