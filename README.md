@@ -83,4 +83,4 @@ $ docker-compose run app sh -c "python manage.py test && flake8"
 - Crear un token para el usuario [http://0.0.0.0:8000/api/user/token/](http://0.0.0.0:8000/api/user/token/)
 - Logearse en la aplicación [http://0.0.0.0:8000/api/user/me/](http://0.0.0.0:8000/api/user/me/)
 - Ver productos (necesitas logearte)[http://0.0.0.0:8000/api/product/products/](http://0.0.0.0:8000/api/product/products/)
-- Hacer pedidos [http://0.0.0.0:8000/api/product/orders/](http://0.0.0.0:8000/api/product/orders/)
+- Hacer pedidos (necesitas logearte)[http://0.0.0.0:8000/api/product/orders/](http://0.0.0.0:8000/api/product/orders/)
